@@ -1,0 +1,102 @@
+$spaceamounts: (
+  auto,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  7,
+  9,
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  24,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  60,
+  70,
+  100
+);
+
+// margin
+@each $spaceamount in $spaceamounts {
+  .m-#{$spaceamount} {
+    margin: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .mt-#{$spaceamount} {
+    margin-top: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .mr-#{$spaceamount} {
+    margin-right: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .mb-#{$spaceamount} {
+    margin-bottom: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .ml-#{$spaceamount} {
+    margin-left: #{$spaceamount}em;
+  }
+}
+
+// padding
+@each $spaceamount in $spaceamounts {
+  .p-#{$spaceamount} {
+    padding: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .pt-#{$spaceamount} {
+    padding-top: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .pr-#{$spaceamount} {
+    padding-right: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .pb-#{$spaceamount} {
+    padding-bottom: #{$spaceamount}em;
+  }
+}
+@each $spaceamount in $spaceamounts {
+  .pl-#{$spaceamount} {
+    padding-left: #{$spaceamount}em;
+  }
+}
+
+// height
+
+@each $spaceamount in $spaceamounts {
+  .h-#{$spaceamount} {
+    height: #{$spaceamount}em;
+  }
+}
+
+// width
+@each $spaceamount in $spaceamounts {
+  .w-#{$spaceamount} {
+    width: #{$spaceamount}em;
+  }
+}
+
+@each $spaceamount in $spaceamounts {
+  .m-#{$spaceamount}-auto {
+    margin: $spaceamount auto;
+  }
+}

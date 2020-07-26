@@ -1,0 +1,9 @@
+$justifies: (flex-start, flex-end, center, space-between, space-around);
+
+@each $justify in $justifies {
+  .is-#{$justify} {
+    display: flex;
+    justify-content: $justify;
+    flex-wrap: wrap;
+  }
+}
