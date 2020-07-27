@@ -1,0 +1,1 @@
+export const IS_DRAWER_VISIBLE = "IS_DRAWER_VISIBLE";
