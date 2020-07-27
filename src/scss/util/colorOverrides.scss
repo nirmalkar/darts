@@ -1,0 +1,7 @@
+$colors: (#f2f2f2);
+
+@each $color in $colors {
+  .c-#{$color} {
+    background-color: #{$color};
+  }
+}
