@@ -1,11 +1,12 @@
 import React from "react";
-
-import { ISharesData } from "../../constants/data/IShareData";
+import { useSelector } from "react-redux";
 
 const IShare = () => {
+  const { shareData } = useSelector((state) => state.share);
+
   return (
     <div className="column">
-      {ISharesData.map((share, i) => {
+      {shareData.map((share, i) => {
         const marketValue = (share.price * share.quantity).toFixed(2);
 
         const unrealized = (
@@ -21,9 +22,9 @@ const IShare = () => {
         return (
           <div className="card mt-3 mb-3 ml-3" key={share.name}>
             <div className="card-content">
-              <div className="columns is-centered is-gapless">
+              <div className="columns is-centered is-gapless is-flex">
                 <div className="column is-2 mx-1">
-                  <div className="card has-background-light">
+                  <div className="card has-background-light hp-100">
                     <div className="card-content has-text-black">
                       <div className="columns">
                         <div className="column is-2">
@@ -53,7 +54,7 @@ const IShare = () => {
                   </div>
                 </div>
                 <div className="column is-3 mr-1">
-                  <div className="card has-background-light">
+                  <div className="card has-background-light hp-100">
                     <div
                       className="card-content has-text-black f-s-14"
                       style={Styles}
@@ -80,7 +81,7 @@ const IShare = () => {
                   </div>
                 </div>
                 <div className="column is-3 mr-1">
-                  <div className="card has-background-light">
+                  <div className="card has-background-light hp-100">
                     <div
                       className="card-content has-text-black f-s-14"
                       style={Styles}
@@ -101,36 +102,67 @@ const IShare = () => {
                             className="progress is-success is-small my-1"
                             value="45"
                             max="100"
-                          >
-                            -45%
-                          </progress>
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="column is-3 mr-1">
-                  <div className="card has-background-light">
+                  <div className="card has-background-light hp-100">
                     <div className="card-content f-s-14" style={Styles}>
                       <span className="f-w-700">Unrealized P/L</span>
                       <span className="is-pulled-right f-w-700">
-                        {Math.abs(unrealized)}
+                        {Math.abs(unrealized).toFixed(2)}
                       </span>
                       <br />
                       <span className="has-text-grey">% Return</span>
                       <span className="is-pulled-right f-w-700">
-                        <span
-                          style={{ position: "absolute", right: 60, top: 29 }}
-                        >
-                          <i className="fas fa-sort-up" />
-                        </span>
+                        {percentReturns > 0 ? (
+                          <span
+                            style={{ position: "absolute", right: 60, top: 25 }}
+                            className="has-text-danger"
+                          >
+                            <i className="fas fa-sort-down" />
+                          </span>
+                        ) : (
+                          <span
+                            style={{ position: "absolute", right: 60, top: 29 }}
+                            className="has-text-success"
+                          >
+                            <i className="fas fa-sort-up" />
+                          </span>
+                        )}
                         {Math.abs(percentReturns)}%
                       </span>
+                      <div className="columns my-3 is-gapless">
+                        <div
+                          className="column"
+                          style={{ transform: "rotate(180deg)" }}
+                        >
+                          <progress
+                            className="progress is-danger is-small my-1"
+                            style={{ borderRadius: "0px 50px 50px 0px" }}
+                            value={
+                              percentReturns < 0 ? Math.abs(percentReturns) : ""
+                            }
+                            max="100"
+                          />
+                        </div>
+                        <div className="column">
+                          <progress
+                            className="progress is-success is-small my-1"
+                            style={{ borderRadius: "0px 50px 50px 0px" }}
+                            value={percentReturns > 0 ? percentReturns : ""}
+                            max="100"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="column is-1 mr-1">
-                  <div className="card has-background-light">
+                  <div className="card has-background-light hp-100">
                     <div className="card-content" style={Styles}>
                       <div className="field is-grouped">
                         <div className="control">
