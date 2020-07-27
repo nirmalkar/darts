@@ -3,7 +3,6 @@ import React from "react";
 import { ISharesData } from "../../constants/data/IShareData";
 
 const IShare = () => {
-  console.log(ISharesData);
   return (
     <div className="column">
       {ISharesData.map((share, i) => {
@@ -133,7 +132,20 @@ const IShare = () => {
                 <div className="column is-1 mr-1">
                   <div className="card has-background-light">
                     <div className="card-content" style={Styles}>
-                      asdfsad
+                      <div className="field is-grouped">
+                        <div className="control">
+                          <button className="button is-primary is-outlined ml-2 width-4">
+                            Buy
+                          </button>
+                        </div>
+                      </div>
+                      <div className="field is-grouped">
+                        <div className="control">
+                          <button className="button is-primary is-outlined ml-2 width-4">
+                            Sell
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
