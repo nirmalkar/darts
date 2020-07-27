@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Select, Form, Input, Button } from "antd";
+import { useDispatch } from "react-redux";
 
 import { initFormState } from "./utils";
+import { changeShareData } from "../../appRedux/action/shareAction";
+import { ISharesData } from "../../constants/data/IShareData";
 
 const { Option } = Select;
 
@@ -11,24 +14,36 @@ const layout = {
 };
 
 const DrawerFrom = () => {
-  const [input, setInput] = useState({ initFormState });
+  const [input, setInput] = useState({ ...initFormState });
+  const dispatch = useDispatch();
   const handleInputChange = (e) => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
   };
-  const submitData = (e) => {};
-  function onShareSelect(value) {
-    console.log(`selected ${value}`);
-  }
+  const submitData = (e) => {
+    e.preventDefault();
+    dispatch(changeShareData({ ...input }));
+  };
+  const onShareSelect = (value) => {
+    ISharesData.map((share) => {
+      if (share.id === value) {
+        setInput({
+          ...share,
+          id: value,
+        });
+      }
+    });
+  };
   return (
-    <Form {...layout} onSubmit={submitData}>
+    <Form {...layout}>
       <Form.Item rules={[{ required: true }]}>
         <Select
           defaultValue="select"
           name="iShare"
           style={{ width: 300 }}
+          value={input.id}
           onChange={onShareSelect}
           size="large"
         >
@@ -70,8 +85,8 @@ const DrawerFrom = () => {
           style={{ width: 300 }}
         />
       </Form.Item>
-      <Form.Item rules={[{ required: true }]}>
-        <Button>Submit</Button>
+      <Form.Item>
+        <Button onClick={(e) => submitData(e)}>Submit</Button>
       </Form.Item>
     </Form>
   );
