@@ -1,7 +1,34 @@
-$fontSizes: (1, 5, 10, 12, 16, 20);
+$fontSizes: (1, 5, 7, 9, 10, 11, 12, 13, 14, 16, 20);
+$fontWeights: (
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  bold,
+  bolder,
+  lighter
+);
+$cursors: (pointer, not-allowed, none);
 
 @each $fontSize in $fontSizes {
   .f-s-#{$fontSize} {
     font-size: #{$fontSize}px;
+  }
+}
+
+@each $fontWeight in $fontWeights {
+  .f-w-#{$fontWeight} {
+    font-weight: $fontWeight;
+  }
+}
+
+@each $cursor in $cursors {
+  .has-cursor-#{$cursor} {
+    cursor: $cursor;
   }
 }

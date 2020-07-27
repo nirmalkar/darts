@@ -13,6 +13,7 @@ $spaceamounts: (
   14,
   16,
   18,
+  19,
   20,
   24,
   25,
@@ -28,27 +29,27 @@ $spaceamounts: (
 
 // margin
 @each $spaceamount in $spaceamounts {
-  .m-#{$spaceamount} {
+  .margin-#{$spaceamount} {
     margin: #{$spaceamount}em;
   }
 }
 @each $spaceamount in $spaceamounts {
-  .mt-#{$spaceamount} {
+  .marginTop-#{$spaceamount} {
     margin-top: #{$spaceamount}em;
   }
 }
 @each $spaceamount in $spaceamounts {
-  .mr-#{$spaceamount} {
+  .marginRight-#{$spaceamount} {
     margin-right: #{$spaceamount}em;
   }
 }
 @each $spaceamount in $spaceamounts {
-  .mb-#{$spaceamount} {
+  .marginBottom-#{$spaceamount} {
     margin-bottom: #{$spaceamount}em;
   }
 }
 @each $spaceamount in $spaceamounts {
-  .ml-#{$spaceamount} {
+  .marginLeft-#{$spaceamount} {
     margin-left: #{$spaceamount}em;
   }
 }
@@ -60,12 +61,12 @@ $spaceamounts: (
   }
 }
 @each $spaceamount in $spaceamounts {
-  .pt-#{$spaceamount} {
+  .paddingTop-#{$spaceamount} {
     padding-top: #{$spaceamount}em;
   }
 }
 @each $spaceamount in $spaceamounts {
-  .pr-#{$spaceamount} {
+  .paddingRight-#{$spaceamount} {
     padding-right: #{$spaceamount}em;
   }
 }
@@ -90,13 +91,13 @@ $spaceamounts: (
 
 // width
 @each $spaceamount in $spaceamounts {
-  .w-#{$spaceamount} {
+  .width-#{$spaceamount} {
     width: #{$spaceamount}em;
   }
 }
 
 @each $spaceamount in $spaceamounts {
-  .m-#{$spaceamount}-auto {
+  .margin-#{$spaceamount}-auto {
     margin: $spaceamount auto;
   }
 }
