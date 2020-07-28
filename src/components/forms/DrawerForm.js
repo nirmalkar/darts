@@ -57,6 +57,7 @@ const DrawerFrom = () => {
       </Form.Item>
       <Form.Item rules={[{ required: true }]}>
         <Input
+          style={inputStyles}
           name="price"
           placeholder="Price"
           onChange={(e) => handleInputChange(e)}
@@ -66,6 +67,7 @@ const DrawerFrom = () => {
       </Form.Item>
       <Form.Item rules={[{ required: true }]}>
         <Input
+          style={inputStyles}
           name="quantity"
           placeholder="Quantity"
           onChange={handleInputChange}
@@ -75,6 +77,7 @@ const DrawerFrom = () => {
       </Form.Item>
       <Form.Item rules={[{ required: true }]}>
         <Input
+          style={inputStyles}
           name="investedAmount"
           placeholder="Invested Amount"
           onChange={(e) => handleInputChange(e)}
@@ -83,7 +86,12 @@ const DrawerFrom = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Button size="large" block onClick={(e) => submitData(e)}>
+        <Button
+          style={btnStyles}
+          size="large"
+          block
+          onClick={(e) => submitData(e)}
+        >
           Submit
         </Button>
       </Form.Item>
@@ -91,4 +99,15 @@ const DrawerFrom = () => {
   );
 };
 
+const btnStyles = {
+  backgroundColor: "rgb(231,255,253)",
+  borderRadius: "3px",
+  color: "rgb(5,155,129)",
+  border: "none",
+};
+const inputStyles = {
+  backgroundColor: "#F1F1F1",
+  borderRadius: "3px",
+  border: "none",
+};
 export default DrawerFrom;
