@@ -14,12 +14,16 @@ const DrawerComponent = () => {
   const handleDrawerVisible = () => {
     dispatch(drawerVisible(!isDrawerVisible));
   };
+  const onClose = () => {
+    dispatch(drawerVisible(!isDrawerVisible));
+  };
 
   return (
     <>
       <Drawer
         placement="right"
         closable={false}
+        onClose={onClose}
         visible={isDrawerVisible}
         width={400}
       >
