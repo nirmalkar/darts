@@ -2,7 +2,7 @@ import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { drawerVisible } from "../appRedux/action/drawerActions";
-import Img from "../assets/dart.png";
+import dartImage from "../assets/dart.png";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Navbar = () => {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <span className="navbar-item ml-5">
-            <img src={Img} alt="dart" />
+            <img src={dartImage} alt="dart" />
           </span>
         </div>
 

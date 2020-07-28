@@ -46,7 +46,7 @@ const IShare = () => {
                             iShares
                           </p>
                           <p className="f-s-7">By BlackDoc</p>
-                          <p className="f-s-11 f-w-bold">S&P 500 Index</p>
+                          <p className="f-s-12 f-w-bold">S&P 500 Index</p>
                           <p className="f-s-10">US Equity</p>
                         </div>
                       </div>
