@@ -83,7 +83,7 @@ const DrawerFrom = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Button block onClick={(e) => submitData(e)}>
+        <Button size="large" block onClick={(e) => submitData(e)}>
           Submit
         </Button>
       </Form.Item>
