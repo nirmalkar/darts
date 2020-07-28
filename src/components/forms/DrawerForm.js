@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Select, Form, Input, Button } from "antd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { initFormState } from "./utils";
 import { changeShareData } from "../../appRedux/action/shareAction";
@@ -15,6 +15,12 @@ const layout = {
 
 const DrawerFrom = () => {
   const [input, setInput] = useState({ ...initFormState });
+  const { isDrawerVisible } = useSelector((state) => state.drawerVisible);
+
+  useEffect(() => {
+    setInput({ ...initFormState });
+  }, [isDrawerVisible]);
+
   const dispatch = useDispatch();
   const handleInputChange = (e) => {
     setInput({
