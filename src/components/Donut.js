@@ -10,6 +10,7 @@ const style = {
   top: 80,
   left: 200,
   lineHeight: "20px",
+  fontSize: "14px",
 };
 
 const Example = () => {
@@ -18,7 +19,7 @@ const Example = () => {
       <div className="card h-16">
         <div className="content mt-3 pt-3">
           <span className="title is-5 ml-4">Portfolio</span>
-          <span className="is-pulled-right mr-2 f-s-12">Asset Wise</span>
+          <span className="is-pulled-right mr-3 f-s-12">Asset Wise</span>
           <PieChart width={320} height={230}>
             <Pie
               data={data}
@@ -39,8 +40,8 @@ const Example = () => {
             </Pie>
             <Legend
               iconSize={14}
-              width={90}
-              height={90}
+              width={120}
+              height={120}
               layout="vertical"
               verticalAlign="bottom"
               wrapperStyle={style}
@@ -51,5 +52,4 @@ const Example = () => {
     </div>
   );
 };
-
 export default Example;
