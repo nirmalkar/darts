@@ -107,7 +107,7 @@ const IShare = () => {
                       <span className="has-text-grey">
                         % of portfolio value
                       </span>
-                      <span className="is-pulled-right f-w-700">asdfasdf</span>
+                      <span className="is-pulled-right f-w-700">22.06%</span>
                       <br />
                       <div className="columns width-19 is-centered">
                         <div className="column is-10">
