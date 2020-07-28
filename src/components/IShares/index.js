@@ -20,11 +20,18 @@ const IShare = () => {
         ).toFixed(2);
 
         return (
-          <div className="card mt-3 mb-3 ml-3" key={share.name}>
+          <div
+            className="card mt-3 mb-3 ml-3"
+            key={share.name}
+            style={cardStyles}
+          >
             <div className="card-content">
               <div className="columns is-centered is-gapless is-flex">
                 <div className="column is-2 mx-1">
-                  <div className="card has-background-light hp-100">
+                  <div
+                    className="card has-background-light hp-100"
+                    style={cardStyles}
+                  >
                     <div className="card-content has-text-black">
                       <div className="columns">
                         <div className="column is-2">
@@ -54,7 +61,10 @@ const IShare = () => {
                   </div>
                 </div>
                 <div className="column is-3 mr-1">
-                  <div className="card has-background-light hp-100">
+                  <div
+                    className="card has-background-light hp-100"
+                    style={cardStyles}
+                  >
                     <div
                       className="card-content has-text-black f-s-14"
                       style={Styles}
@@ -81,7 +91,10 @@ const IShare = () => {
                   </div>
                 </div>
                 <div className="column is-3 mr-1">
-                  <div className="card has-background-light hp-100">
+                  <div
+                    className="card has-background-light hp-100"
+                    style={cardStyles}
+                  >
                     <div
                       className="card-content has-text-black f-s-14"
                       style={Styles}
@@ -109,7 +122,10 @@ const IShare = () => {
                   </div>
                 </div>
                 <div className="column is-3 mr-1">
-                  <div className="card has-background-light hp-100">
+                  <div
+                    className="card has-background-light hp-100"
+                    style={cardStyles}
+                  >
                     <div className="card-content f-s-14" style={Styles}>
                       <span className="f-w-700">Unrealized P/L</span>
                       <span className="is-pulled-right f-w-700">
@@ -162,7 +178,10 @@ const IShare = () => {
                   </div>
                 </div>
                 <div className="column is-1 mr-1">
-                  <div className="card has-background-light hp-100">
+                  <div
+                    className="card has-background-light hp-100"
+                    style={cardStyles}
+                  >
                     <div className="card-content" style={Styles}>
                       <div className="field is-grouped">
                         <div className="control">
@@ -191,5 +210,6 @@ const IShare = () => {
 };
 
 const Styles = { overflowWrap: "anywhere", padding: ".3rem" };
+const cardStyles = { borderRadius: "5px" };
 
 export default IShare;
