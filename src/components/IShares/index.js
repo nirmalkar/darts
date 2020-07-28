@@ -134,7 +134,7 @@ const IShare = () => {
                       <br />
                       <span className="has-text-grey">% Return</span>
                       <span className="is-pulled-right f-w-700">
-                        {percentReturns > 0 ? (
+                        {percentReturns < 0 ? (
                           <span
                             style={{ position: "absolute", right: 60, top: 25 }}
                             className="has-text-danger"
