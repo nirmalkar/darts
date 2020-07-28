@@ -9,8 +9,8 @@ import { ISharesData } from "../../constants/data/IShareData";
 const { Option } = Select;
 
 const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
+  labelCol: { span: 0 },
+  wrapperCol: { span: 24 },
 };
 
 const DrawerFrom = () => {
@@ -43,7 +43,6 @@ const DrawerFrom = () => {
         <Select
           defaultValue="select"
           name="iShare"
-          style={{ width: 300 }}
           value={input.id}
           onChange={onShareSelect}
           size="large"
@@ -63,7 +62,6 @@ const DrawerFrom = () => {
           onChange={(e) => handleInputChange(e)}
           value={input.price}
           size="large"
-          style={{ width: 300 }}
         />
       </Form.Item>
       <Form.Item rules={[{ required: true }]}>
@@ -73,7 +71,6 @@ const DrawerFrom = () => {
           onChange={handleInputChange}
           value={input.quantity}
           size="large"
-          style={{ width: 300 }}
         />
       </Form.Item>
       <Form.Item rules={[{ required: true }]}>
@@ -83,11 +80,12 @@ const DrawerFrom = () => {
           onChange={(e) => handleInputChange(e)}
           value={input.investedAmount}
           size="large"
-          style={{ width: 300 }}
         />
       </Form.Item>
       <Form.Item>
-        <Button onClick={(e) => submitData(e)}>Submit</Button>
+        <Button block onClick={(e) => submitData(e)}>
+          Submit
+        </Button>
       </Form.Item>
     </Form>
   );
