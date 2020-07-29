@@ -136,14 +136,22 @@ const IShare = () => {
                       <span className="is-pulled-right f-w-700">
                         {percentReturns < 0 ? (
                           <span
-                            style={{ position: "absolute", right: 60, top: 25 }}
+                            style={{
+                              position: "relative",
+                              right: 2,
+                              bottom: 3,
+                            }}
                             className="has-text-danger"
                           >
                             <i className="fas fa-sort-down" />
                           </span>
                         ) : (
                           <span
-                            style={{ position: "absolute", right: 60, top: 29 }}
+                            style={{
+                              position: "relative",
+                              right: 2,
+                              top: 3,
+                            }}
                             className="has-text-success"
                           >
                             <i className="fas fa-sort-up" />
