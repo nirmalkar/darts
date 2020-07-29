@@ -25,15 +25,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ./ --cache --ignore-pattern .gitignore",
+    "lint": "eslint ./ --cache",
     "lint-fix": "eslint ./ --fix"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && pretty-quick --staged"
+      "pre-commit": "lint-staged && pretty-quick --staged"
     }
   },
   "eslintConfig": {
@@ -62,6 +64,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
   }
