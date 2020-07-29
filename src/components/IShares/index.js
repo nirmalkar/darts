@@ -26,14 +26,14 @@ const IShare = () => {
             style={cardStyles}
           >
             <div className="card-content">
-              <div className="columns is-centered is-gapless is-flex">
+              <div className="columns is-centered is-gapless is-flex is-mobile">
                 <div className="column is-2 mx-1">
                   <div
                     className="card has-background-light hp-100"
                     style={cardStyles}
                   >
                     <div className="card-content has-text-black">
-                      <div className="columns">
+                      <div className="columns is-mobile is-vcentered">
                         <div className="column is-2">
                           <span className="mr-5  has-cursor-pointer">
                             <i className="fas fa-bars f-s-10" />
@@ -84,7 +84,7 @@ const IShare = () => {
                       <i className="fas fa-money-bill mr-2 "></i>
                       <span>Invested Amt</span>
                       <span className="is-pulled-right f-w-700">
-                        {share.investedAmount}
+                        ${share.investedAmount}
                       </span>
                       <br />
                     </div>
@@ -184,15 +184,15 @@ const IShare = () => {
                   >
                     <div className="card-content" style={Styles}>
                       <div className="field is-grouped">
-                        <div className="control">
-                          <button className="button is-primary is-outlined ml-2 width-4">
+                        <div className="control m-auto">
+                          <button className="button is-primary is-outlined width-4">
                             Buy
                           </button>
                         </div>
                       </div>
                       <div className="field is-grouped">
-                        <div className="control">
-                          <button className="button is-primary is-outlined ml-2 width-4">
+                        <div className="control m-auto">
+                          <button className="button is-primary is-outlined width-4">
                             Sell
                           </button>
                         </div>
@@ -209,7 +209,10 @@ const IShare = () => {
   );
 };
 
-const Styles = { overflowWrap: "anywhere", padding: ".3rem" };
-const cardStyles = { borderRadius: "5px" };
+const Styles = {
+  overflowWrap: "anywhere",
+  padding: ".3rem",
+};
+const cardStyles = { borderRadius: "5px", overflow: "auto" };
 
 export default IShare;

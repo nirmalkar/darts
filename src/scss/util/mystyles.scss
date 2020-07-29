@@ -1,0 +1,11 @@
+// Update blue
+$blue: #72d0eb;
+// Add pink and its invert
+$orange: #ff9900;
+$pink-invert: #fff;
+// Add a serif family
+
+$primary: $orange;
+$primary-invert: $pink-invert;
+// 6. Import the rest of Bulma
+@import "~bulma/bulma.sass";
