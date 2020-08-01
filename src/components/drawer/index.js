@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Drawer } from "antd";
-import { useSelector, useDispatch } from "react-redux";
 
-import { drawerVisible } from "../../appRedux/action/drawerActions";
 import DrawerFrom from "../forms/DrawerForm";
+import { DrawerContext } from "../../contexts/DrawerContext";
 
 import "antd/dist/antd.css";
 
 const DrawerComponent = () => {
-  const dispatch = useDispatch();
-  const { isDrawerVisible } = useSelector((state) => state.drawerVisible);
+  const { isDrawerVisible, setIsDrawerVisible } = useContext(DrawerContext);
 
   const handleDrawerVisible = () => {
-    dispatch(drawerVisible(!isDrawerVisible));
+    setIsDrawerVisible(!isDrawerVisible);
   };
   const onClose = () => {
-    dispatch(drawerVisible(!isDrawerVisible));
+    setIsDrawerVisible(!isDrawerVisible);
   };
-
   return (
     <>
       <Drawer

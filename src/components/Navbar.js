@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DrawerContext } from "../contexts/DrawerContext";
 
-import { useDispatch, useSelector } from "react-redux";
-import { drawerVisible } from "../appRedux/action/drawerActions";
 import dartImage from "../assets/dart.png";
-
 const Navbar = () => {
-  const dispatch = useDispatch();
-  const { isDrawerVisible } = useSelector((state) => state.drawerVisible);
+  const { isDrawerVisible, setIsDrawerVisible } = useContext(DrawerContext);
 
   const handleDrawerVisible = () => {
-    dispatch(drawerVisible(!isDrawerVisible));
+    setIsDrawerVisible(!isDrawerVisible);
   };
   return (
     <div className="hero-head">
